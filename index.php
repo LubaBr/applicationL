@@ -4,33 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Luba Bridgelal">
+    <meta name="author" content="Luba Bridgelal Lsoftware Leading Edge Softwares">
     <meta name="generator" content="Manual">
     <title>Lsoftware</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+.custom-bg{
+  background-image: url("img/lsoftware_transparent.png");
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
-
-  <!-- Custom styles for this template -->
+</style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top  bg-dark">
     <p class="navbar-brand">&nbsp;</p>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
@@ -68,13 +59,17 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
   <div class="container">
-    <h1 class="display-3">Lsoftware</h1>
+
     <p>
+      <img class="float-left" src="img/lsoftware_transparent.png" alt="Lsoftware" width="40%" height="40%">
+      <p>
+        <h1>&nbsp;</h1>
       Leading edge software services.
       Website set up, hosting, development and design with front line new tech.
-      Innovated tools design, creation or old tool improvement and advancement.
+      Innovated tools design, creation or legacy software improvement and advancement.
       Our team will bring your business to the new heights of efficiency, profitability and industry insight.
-      </p>
+    </p>
+    </p>
     <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
   </div>
 </div>
