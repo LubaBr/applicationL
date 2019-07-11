@@ -1,14 +1,25 @@
 <?php
 
 class AuthenticationLight{
+      private $id='';
       private $question='';
       private $answer='';
+      private $date='';
 
       public function __construct($setting){
+          $this->id = $setting->getId();
           $this->question = $setting->getQuestion();
           $this->answer   = $setting->getAnswer();
+          $this->date     = $setting->getDate();
       }
 
+      public function getId(){
+        return $this->id;
+      }
+
+      public function getDate(){
+        return $this->date;
+      }
       public function getAnswer(){
         return $this->answer;
       }
@@ -30,12 +41,11 @@ class AuthenticationLight{
         <div class="input-group mb-3">
           <div class="input-group-prepend">
 
-            <button class="btn btn-outline-secondary" type="button">'.$this->question.'</button>
+            <button class="btn btn-outline-secondary" type="button" id="auth-button" name="auth-button">'.$this->question.'</button>
 
-
-            <!--span class="input-group-text" id="basic-addon1">'.$this->question.'</span-->
           </div>
-          <input type="text" class="form-control" placeholder="Answer" aria-label="Answer" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" placeholder="Answer" aria-label="Answer" aria-describedby="basic-addon1" id="answer" name="answer">
+          <span class="input-group-text" id="auth-error"></span>
         </div>
         ';
 
@@ -46,11 +56,22 @@ class AuthenticationLight{
 
 class TaskList{
   private $taskList=array();
+  private $source='tasks.txt';
 
-  public function __construct($list){
-    foreach($list as $item){
+  public function __construct($list=''){
+    if($list == ''){
+      //load from file
+      $file=file($this->source,FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+      foreach($file as $a => $item){
+        $task_item=explode('|', $item);
+        $this->taskList[] = new Task($task_item);
+      }
+    }else{
+      foreach($list as $s => $item){
         $this->taskList[] = new Task($item[0], $item[1]);
+      }
     }
+
   }
 
   public function createHtmlList(){
@@ -90,12 +111,21 @@ class TaskList{
 }
 
 class Task{
+  public $id='';
   public $task='';
   public $checked=false;
+  public $date='';
 
-  public function __construct($task, $checked){
-    $this->task = $task;
-    $this->checked=$checked;
+  public function __construct($task, $checked = ''){
+    if( $checked != ''){
+      $this->task = $task;
+      $this->checked=$checked;
+    }else{
+      $this->id   = $task['0'];
+      $this->task = $task['1'];
+      $this->checked = $task['2'];
+      $this->date    = $task['3'];
+    }
   }
 }
 
